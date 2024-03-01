@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.friends {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pending-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-family: "Press Start 2P", system-ui;
+    font-size: .7rem;
+    margin-top: 2%;
+}
+
+.pending {
+    margin: 0 1rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.UserImage {
+    position: relative;
+    border-radius: 50%;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.OnlineLogo {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    bottom: 30rem;
+    left: 4.2rem;
+}
+
+.friendsec-one {
+    display: flex;
+    align-items: center;
+    margin-top: -5%;
+}
+
+.friendsec-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.nav-bar {
+    display: flex;
+    border-radius: 30px;
+    background-color: rgb(81, 181, 214, 0.56);
+    padding: 10px 30px;
+    outline: 2px solid #B5FEFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-button {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: "Roboto Mono", monospace;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 6px 18px;
+    min-width: 160px;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 171, 186, 0.36);
+}
+
+.nav-button.active {
+    background-color: rgba(255, 171, 186, 0.36);
+}
+
+.searchbar input {
+    color: white;
+    background-color: #132130;
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    border: 2px solid hsla(181, 100%, 85%, 0.51);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-top: 5%;
+}
+
+.Box {
+    width: 80rem;
+    height: 35rem;
+    background-color: rgb(28, 57, 89, 0.42);
+    border: 1px solid rgba(181, 254, 255, 0.51);
+    border-radius: 50px;
+    margin-top: -3%;
+    color: white;
+    text-align: center;
+    display: flex;
+}
+
+.Box h1 {
+    font-size: 20px;
+    font-family: "Press Start 2P", system-ui;
+    text-align: center;
+    margin-top: 15%;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pending, .UserImage, .OnlineLogo, .Box {
+        width: 100%; 
+    }
+    
+    .nav-bar, .friendsec-one, .friendsec-two {
+        flex-direction: column;
+    }
+
+    .nav-button, .searchbar input {
+        width: 90%; 
+        margin: 10px 0; 
+    }
+
+    .Box {
+        flex-direction: column; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px; 
+    }
+
+    .pending-container, .nav-button, .searchbar input, .Box h1 {
+        font-size: .5rem; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pending-container, .nav-button, .searchbar input, .Box {
+        font-size: .4rem; 
+    }
+
+    .OnlineLogo {
+        bottom: 20rem; 
+    }
+}

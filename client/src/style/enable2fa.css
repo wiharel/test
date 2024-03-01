@@ -1,0 +1,121 @@
+.bloc-2fa
+{
+    /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(28, 57, 89, 0.4);
+  backdrop-filter: blur(3px);
+  width: 90%;
+  height: 80%;
+  border-radius: 50px;
+  border-color: #EF9C6D;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.text-2fa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 40%;
+  /* border-radius: 50px;
+  border-color: #EF9C6D;
+  border-width: 1px;
+  border-style: solid; */
+}
+
+
+.centered-content {
+  /* text-align: center; */
+  color: white;
+  font-family: "Press Start 2P", system-ui;
+}
+
+.button-2fa
+{
+  justify-content: center;
+  align-items: center;
+    width: 120px;
+    height: 30px;
+    background-color: #9247A1;
+    font-family: "Press Start 2P", system-ui;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(96, 110, 192, 0.7),
+               0 0 10px rgba(96, 110, 192, 0.7),
+               0 0 20px rgba(96, 110, 192, 0.7),
+               0 0 40px #ff00de,
+               0 0 80px #ff00de,
+               0 0 90px #ff00de,
+               0 0 100px #ff00de,
+               0 0 150px #ff00de;
+  box-shadow: 0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px #ff00de,
+              0 0 20px #ff00de,
+              0 0 25px #ff00de,
+              0 0 30px #ff00de,
+              0 0 35px #ff00de;
+}
+
+.button-2fa:hover
+{
+    box-shadow: 0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px #ff00de,
+              0 0 20px #ff00de,
+              0 0 25px #ff00de,
+              0 0 30px #ff00de,
+              0 0 35px #ff00de,
+              0 0 40px #ff00de,
+              0 0 45px #ff00de,
+              0 0 50px #ff00de;
+}
+
+.next
+{
+    width: 120px;
+    height: 30px;
+    background-color: #9247A1;
+    font-family: "Press Start 2P", system-ui;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(96, 110, 192, 0.7),
+               0 0 10px rgba(96, 110, 192, 0.7),
+               0 0 20px rgba(96, 110, 192, 0.7),
+               0 0 40px #ff00de,
+               0 0 80px #ff00de,
+               0 0 90px #ff00de,
+               0 0 100px #ff00de,
+               0 0 150px #ff00de;
+  box-shadow: 0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px #ff00de,
+              0 0 20px #ff00de,
+              0 0 25px #ff00de,
+              0 0 30px #ff00de,
+              0 0 35px #ff00de;
+}
+
+.next:hover
+{
+    box-shadow: 0 0 5px #fff,
+              0 0 10px #fff,
+              0 0 15px #ff00de,
+              0 0 20px #ff00de,
+              0 0 25px #ff00de,
+              0 0 30px #ff00de,
+              0 0 35px #ff00de,
+              0 0 40px #ff00de,
+              0 0 45px #ff00de,
+              0 0 50px #ff00de;
+}

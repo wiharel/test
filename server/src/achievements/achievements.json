@@ -1,0 +1,25 @@
+{
+    "achievements": {
+        "Welcome": {
+            "category": "Welcome",
+            "level": 1,
+            "title": "Welcome",
+            "description": "For being logged in for the first time",
+            "xp": 0
+        },
+        "FirstWin":{
+            "category": "FirstWin",
+            "level": 1,
+            "title": "First Win",
+            "description": "For winning your first game",
+            "xp": 0
+        },
+        "WinStreak":{
+            "category": "WinStreak",
+            "level": 5,
+            "title": "Win Streak",
+            "description": "For winning 3 games in a row",
+            "xp": 10
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.bloc-game
+{
+    position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(28, 57, 89, 0.4);
+  backdrop-filter: blur(3px);
+  width: 90%;
+  height: 80%;
+  border-radius: 50px;
+  border-color: #EF9C6D;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.gameover{
+    /* display: flex; */
+    /* justify-content: center; */
+    margin: auto;
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.Winner{
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: #10f35cda;
+    text-shadow: 0 0 5px #0fdb53da, 0 0 10px #0fdb53da, 0 0 15px #0fdb53da, 0 0 20px #0fdb53da;
+}
+
+.WinnerMessage{
+    font-size: large;
+    color: #10f35cda;
+    text-shadow: 0 0 5px #0fdb53da, 0 0 10px #0fdb53da, 0 0 15px #0fdb53da, 0 0 20px #0fdb53da;
+}
+
+.Looser{
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: rgba(243, 35, 35, 0.908);
+    text-shadow: 0 0 5px rgba(194, 19, 19, 0.88), 0 0 8px rgba(194, 19, 19, 0.88), 0 0 10px rgba(194, 19, 19, 0.88), 0 0 12px rgba(194, 19, 19, 0.88);
+}
+
+.LooserMessage{
+    font-size: large;
+    /* display: flex; */
+    color: rgba(243, 35, 35, 0.908);
+    text-shadow: 0 0 1px rgba(194, 19, 19, 0.88), 0 0 2px rgba(194, 19, 19, 0.88), 0 0 3px rgba(194, 19, 19, 0.88), 0 0 4px rgba(194, 19, 19, 0.88);
+}

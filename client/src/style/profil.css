@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+.profil {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+@media (min-width: 600px) {
+    .profil {
+      flex-direction: row;
+      height: 80%;
+      width: 90%;
+    }
+  }
+
+.sec-one {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+    .sec-one {
+      width: 60%;
+    }
+}
+
+.sec-two {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+    .sec-two {
+      flex-direction: row;
+      height: 65%;
+    }
+}
+
+.user-info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(28, 57, 89, 0.4);
+    backdrop-filter: blur(3px);
+    border-radius: 30px;    
+    z-index: 1;
+}
+
+.history {
+    width: 30%;
+    background-color: rgba(28, 57, 89, 0.4);
+    backdrop-filter: blur(3px);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.achivements {
+    backdrop-filter: blur(3px);
+    background-color: rgba(28, 57, 89, 0.4);
+    border-radius: 30px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress {
+    background-color: rgba(28, 57, 89, 0.4);
+    backdrop-filter: blur(3px);
+    width: 43%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.edit {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.picture {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+}
+
+.info {
+    width: 70%;
+}
+
+.logout {
+    cursor: pointer;
+    margin-top: 10%;
+}
+
+.txt {
+    font-family: "Roboto Mono", monospace;
+    color: white;
+    text-shadow: 0 0 5px,
+                 0 0 10px;
+}
+
+.username {
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.thistory {
+    font-family: "Press Start 2P", system-ui;
+    color: #51B5D6;
+    font-size: 1.9vw;
+}
+
+.data {
+    font-family: "Press Start 2P", system-ui;
+    color: #d5d765;
+    font-size: 1vw;
+}
+
+.tachivements {
+    color: #FDB571;
+    text-shadow: 1px 0 10px;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 2.2vw;
+}
+
+
+
+
+

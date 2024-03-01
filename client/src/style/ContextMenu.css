@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.ContextMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(14, 26, 40, 0.7);
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 0.3rem;
+  }
+  
+  .ContextMenu button {
+    margin: 0.3rem;
+    padding: 0.4rem 1rem;
+    border: none;
+    background-color: #9247A1;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 0.7rem;
+    cursor: pointer;
+  }
+  
+  .ContextMenu button:hover {
+    background-color: #9e18b9;
+  }

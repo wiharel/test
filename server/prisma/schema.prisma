@@ -1,0 +1,160 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  online
+  offline
+  ingame
+}
+
+model User {
+  userId             String            @id @default(uuid())
+  username           String            @unique
+  userIconPath       String            @default("default.jpg")
+  userStatus         Status            @default(offline)
+  
+  otpauth_secret     String?
+  otpauth_url        String?
+  otpauth_verified   Boolean            @default(false)
+  
+  displayName        String?
+  
+  blocked           UserBlock[]       @relation("Blocker")
+  blockedby         UserBlock[]       @relation("Blocked")
+
+  twofactor          Boolean           @default(false)
+  registered         Boolean            @default(false)       
+  friends            UserFriends[]     @relation("FriendsList")
+  friendOf           UserFriends[]     @relation("FriendOf")
+  
+  channelsMembership Channel[]         @relation("ChannelMembers")
+  channelsBannishement Channel[]       @relation("BannedUsers")
+  channelsInvitations Channel[]        @relation("ChannelInvites")
+  channelsAdmins     Channel[]         @relation("ChannelAdministrators")
+  channelsMuted      Channel[]         @relation("MutedUsers")
+  channelOwned       Channel[]         @relation("ChannelsOwned")
+  
+  
+  gameHistoryAsRightPlayer        Game[]        @relation("GamesAsRightPlayer")   
+  gameHistoryAsLeftPlayer         Game[]        @relation("GamesAsLeftPlayer")
+  gamesWon                        Game[]        @relation("GamesWon")
+  rankPoints                      Int           @default(0)
+  winStreak                       Int           @default(0)
+  
+  sentDMs DirectMessage[]   @relation("SentMessages")
+  receivedDMs DirectMessage[] @relation("ReceivedMessages")
+  sentChanMessages   ChannelMessage[]
+
+  sentFriendRequests    FriendRequest[] @relation("RequestSent")
+  receivedFriendRequests  FriendRequest[] @relation("RequestReceived")
+
+  achievements Achievements[]
+}
+
+model UserFriends {
+  user        User      @relation(name: "FriendsList", fields: [userId], references: [userId])
+  userId      String
+  friend      User      @relation(name: "FriendOf", fields: [friendId], references: [userId])
+  friendId    String
+  frienshipId String    @id @default(uuid())
+}
+
+enum ChanType {
+  public
+  private
+  protected
+}
+model Channel {
+  chanId         String            @id @default(uuid())
+  chanName       String
+  chanType       ChanType
+  chanPassword   String?
+  owner          User              @relation(name: "ChannelsOwned", fields: [ownerId], references: [userId])
+  ownerId        String
+  members        User[]            @relation("ChannelMembers")
+  banned         User[]            @relation("BannedUsers")
+  administrators User[]            @relation("ChannelAdministrators")
+  invites        User[]            @relation("ChannelInvites")
+  muted          User[]            @relation("MutedUsers")
+  messages       ChannelMessage[]
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+}
+
+model ChannelMessage {
+  messageId String     @id @default(uuid())
+  content   String
+  sentAt    DateTime   @default(now())
+  sender    User       @relation(fields: [senderId], references: [userId])
+  senderId  String
+  channel   Channel    @relation(fields: [channelId], references: [chanId])
+  channelId String
+}
+
+model DirectMessage {
+  dmId        String     @id @default(uuid())
+  content   String
+  sentAt    DateTime   @default(now())
+  sender    User       @relation(name: "SentMessages", fields: [senderId], references: [userId])
+  senderId  String
+  receiver  User       @relation(name: "ReceivedMessages", fields: [receiverId], references: [userId])
+  receiverId String
+}
+
+model Game {
+  gameId  String  @id @default(uuid())
+
+  rightPlayer User @relation(name: "GamesAsRightPlayer", fields: [rightPlayerId], references: [userId])
+  rightPlayerId String
+
+  leftPlayer User @relation(name: "GamesAsLeftPlayer", fields: [leftPlayerId], references: [userId])
+  leftPlayerId String
+
+  rightPlayerScore Int
+  leftPlayerScore   Int
+
+  winner  User? @relation(name: "GamesWon", fields: [winnerId], references: [userId])
+  winnerId  String?
+
+
+  createdAt   DateTime  @default(now())
+}
+
+model FriendRequest {
+  requestId String @id @default(uuid())
+
+  sender    User    @relation(name: "RequestSent", fields: [senderId], references: [userId])
+  senderId String
+
+  receiver  User    @relation(name: "RequestReceived", fields: [receiverId], references: [userId])
+  receiverId  String
+
+  sentAt    DateTime   @default(now())
+}
+
+model Achievements {
+	id			String @id @default(uuid())
+	category	String
+	level		Int
+	title		String @unique
+	description	String
+	users		User[]
+}
+
+model UserBlock {
+  blockId    String   @id @default(uuid())
+  blocker    User     @relation("Blocker", fields: [blockerId], references: [userId])
+  blockerId  String
+  blocked    User     @relation("Blocked", fields: [blockedId], references: [userId])
+  blockedId  String
+  createdAt  DateTime @default(now())
+}

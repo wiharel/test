@@ -1,0 +1,34 @@
+/* src/Components/profil/WinProgress.css */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  
+  /* .circle-progress svg {
+    transform: rotate(-90deg);
+  } */
+  
+  /* .circle-bg {
+    fill: none;
+    stroke: #FDB571;
+    stroke-width: 3.8;
+  }
+   */
+  .circle-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    font-size: 2rem;
+    font-family: "Press Start 2P", system-ui;
+    color: #d5d765;
+  }
+
+  @media (min-width: 600px) {
+    .circle-text {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .circle-text {
+      font-size: 2rem;
+    }
+  }
